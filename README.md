@@ -1,5 +1,14 @@
 # 📸 Ecogram – Instagram Clone
 
+Ecogram is a modern full-stack Instagram-style social media platform built with React, Appwrite, and Tailwind CSS. It enables users to create, like, and explore posts in a sleek, responsive UI while leveraging powerful features like authentication, real-time updates, and content bookmarking.
+
+## 🗂 Screenshots
+
+<div align="center">
+<img src="/screenshots/banner.png" alt="Screen 1" width="100%"/>
+</div>
+
+
 <div align="center">
 
 <table>
@@ -17,7 +26,6 @@
 
 </div>
 
-Ecogram is a modern full-stack Instagram-style social media platform built with React, Appwrite, and Tailwind CSS. It enables users to create, like, and explore posts in a sleek, responsive UI while leveraging powerful features like authentication, real-time updates, and content bookmarking.
 
 ---
 
