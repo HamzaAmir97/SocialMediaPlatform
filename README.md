@@ -153,8 +153,7 @@ pnpm preview
 
 ## 📄 License
 
-This project is open-source. Please review or add a LICENSE file if needed.
-
+This project is open-source. Please review or add  your contribution as you want.
 ---
 
 ## 🔮 Future Improvements
