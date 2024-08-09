@@ -4,7 +4,7 @@ function SignupForm() {
   return (
     <div>
       
-      <Button/>
+      <Button variant="outline">Button</Button>
       
       SignupForm</div>
   )
