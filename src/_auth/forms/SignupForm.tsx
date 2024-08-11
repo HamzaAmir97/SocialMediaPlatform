@@ -6,7 +6,7 @@ function SignupForm() {
       
       <Button variant="outline">Button</Button>
       
-      SignupForm</div>
+      </div>
   )
 }
 
