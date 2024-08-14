@@ -2,7 +2,8 @@ import  {Outlet,  Navigate} from 'react-router-dom';
 
 
 function AuthLayout() {
-  const isAuthenticated =false;
+  // TODO: Replace with actual authentication check
+  const isAuthenticated = false;
 
   return (
     <>
@@ -18,8 +19,8 @@ function AuthLayout() {
   </section>
   <img
             src="/assets/images/side-img.svg"
-            alt="logo"
-            className="   hidden xl:block h-screen w-1/2 object-cover bg-no-repeat"
+            alt="Authentication page visual"
+            className="hidden xl:block h-screen w-1/2 object-cover bg-no-repeat"
           />
           
 </>
@@ -31,7 +32,7 @@ function AuthLayout() {
     }
     
     
-    AuthLayout</>
+    </>
   )
 }
 
