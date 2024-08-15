@@ -11,7 +11,9 @@ function App() {
 
   return (
     <main className='flex h-screen w-screen'>
+ 
 
+ {/* //public routes */}
     <Routes>
     <Route element ={<AuthLayout/>}>
 
@@ -22,7 +24,7 @@ function App() {
    </Route>
 
 
-   {/* //public routes */}
+   
    
 {/* private routes */}
     <Route element={<RootLayout/>}>
