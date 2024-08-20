@@ -13,25 +13,24 @@ import {
 } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
 
-
-const formSchema = z.object({
-  username: z.string().min(2).max(50),
-})
-
+import {SignupValidation} from "@/lib/validation"
 
 
 const SignupForm = () => {
 
   // 1. Define your form.
-  const form = useForm<z.infer<typeof formSchema>>({
-    resolver: zodResolver(formSchema),
+  const form = useForm<z.infer<typeof SignupValidation>>({
+    resolver: zodResolver(SignupValidation),
     defaultValues: {
+      name: "",
       username: "",
+      email: "",
+      password: "",
     },
   })
 
   // 2. Define a submit handler.
-  function onSubmit(values: z.infer<typeof formSchema>) {
+  function onSubmit(values: z.infer<typeof SignupValidation>) {
     // Do something with the form values.
     // ✅ This will be type-safe and validated.
     console.log(values)
@@ -41,6 +40,8 @@ const SignupForm = () => {
 
   return (
     <Form {...form}>
+      <div className="sm:w-420 flex-center flex-col ">
+       <img src="/assets/images/logo.svg" alt="logo" width={170} height={37} />
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
         <FormField
           control={form.control}
@@ -60,6 +61,7 @@ const SignupForm = () => {
         />
         <Button type="submit">Submit</Button>
       </form>
+      </div>
     </Form>
   )
 }
