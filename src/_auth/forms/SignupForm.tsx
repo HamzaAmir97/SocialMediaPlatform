@@ -41,7 +41,7 @@ const SignupForm = () => {
   return (
     <Form {...form}>
       <div className="sm:w-420 flex-center flex-col ">
-       <img src="/assets/images/logo.svg" alt="logo" width={170} height={37} />
+       <img src="/assets/images/logo.svg" alt="logo"  />
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
         <FormField
           control={form.control}
