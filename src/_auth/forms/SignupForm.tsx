@@ -12,12 +12,12 @@ import {
   FormMessage,
 } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
-
+import {Link} from "react-router-dom"
 import { SignupValidation } from "@/lib/validation"
-
+import Loader from "@/components/ui/shared/Loader"
 
 const SignupForm = () => {
-const isLoading= true;
+const isLoading= false;
 
   
   // 1. Define your form.
@@ -108,16 +108,18 @@ const isLoading= true;
           <Button type="submit" className="shad-button_primary">
 
             {isLoading ? (
-              
+
               <div className="flex-center gap-2">
-                
-                <span className="text-light-4">Loading...</span>
+                <Loader /> ...Loading
               </div>
             ) : (
               "Sign up"
             )}
 
           </Button>
+          <p className="text-light-2 text-small-regular mt-2 text-center">Already have an account?
+            <Link to="/sign-in" className="text-primary-500 text-small ml-1">Login</Link>
+          </p>
         </form>
       </div>
     </Form>
