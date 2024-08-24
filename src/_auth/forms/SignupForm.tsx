@@ -12,14 +12,14 @@ import {
   FormMessage,
 } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
-import {Link} from "react-router-dom"
+import { Link } from "react-router-dom"
 import { SignupValidation } from "@/lib/validation"
 import Loader from "@/components/ui/shared/Loader"
 
 const SignupForm = () => {
-const isLoading= false;
+  const isLoading = false;
 
-  
+
   // 1. Define your form.
   const form = useForm<z.infer<typeof SignupValidation>>({
     resolver: zodResolver(SignupValidation),
@@ -33,8 +33,9 @@ const isLoading= false;
 
   // 2. Define a submit handler.
   function onSubmit(values: z.infer<typeof SignupValidation>) {
-    // Do something with the form values.
-    // ✅ This will be type-safe and validated.
+    const newUser = await createUser({
+    
+    })
     console.log(values)
   }
 
@@ -57,13 +58,13 @@ const isLoading= false;
                 <FormControl>
                   <Input type="text" className="shad-input" {...field} />
                 </FormControl>
-               
+
                 <FormMessage />
               </FormItem>
             )}
           />
 
-<FormField
+          <FormField
             control={form.control}
             name="username"
             render={({ field }) => (
@@ -72,12 +73,12 @@ const isLoading= false;
                 <FormControl>
                   <Input type="text" className="shad-input" {...field} />
                 </FormControl>
-               
+
                 <FormMessage />
               </FormItem>
             )}
           />
-           <FormField
+          <FormField
             control={form.control}
             name="email"
             render={({ field }) => (
@@ -86,7 +87,7 @@ const isLoading= false;
                 <FormControl>
                   <Input type="text" className="shad-input" {...field} />
                 </FormControl>
-               
+
                 <FormMessage />
               </FormItem>
             )}
@@ -96,11 +97,11 @@ const isLoading= false;
             name="password"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Password</FormLabel> 
+                <FormLabel>Password</FormLabel>
                 <FormControl>
                   <Input type="password" className="shad-input" {...field} />
                 </FormControl>
-               
+
                 <FormMessage />
               </FormItem>
             )}
