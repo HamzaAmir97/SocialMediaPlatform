@@ -20,7 +20,8 @@ export async function  createUserAccount(user:INewUser){
       }
        catch (error){
          console.log(error)
-  
+         throw error; // إعادة رمي الخطأ ليتم التعامل معه في المكون
+
 
        }
             
