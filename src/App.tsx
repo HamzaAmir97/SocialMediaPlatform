@@ -6,6 +6,7 @@ import SignupForm from './_auth/forms/SignupForm';
 import { Home } from './root/pages';
 import AuthLayout from './_auth/AuthLayout';
 import RootLayout from './root/RootLayout';
+import { Toaster } from "@/components/ui/toaster"
 
 function App() {
 
@@ -35,6 +36,9 @@ function App() {
 
 
     </Routes>
+
+    <Toaster />
+
     </main>
   )
 }
