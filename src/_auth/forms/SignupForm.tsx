@@ -15,11 +15,13 @@ import { Link } from "react-router-dom"
 import { SignupValidation } from "@/lib/validation"
 import Loader from "@/components/ui/shared/Loader"
 import {createUserAccount} from "@/lib/appwrite/api"
+import { useToast } from "@/hooks/use-toast"
 
 
 
 const SignupForm = () => {
   const isLoading = false;
+  const { toast } = useToast()
 
 
   // 1. Define your form.
@@ -39,8 +41,11 @@ const SignupForm = () => {
     
      
  if(!newUser)
-  return;
-
+  return  toast({
+    title: "Sigin up failed please  try again.",
+    description: "Friday, February 10, 2023 at 5:57 PM",
+  }) ;
+  //  const  session = await signInAccount()
   }
 
 
