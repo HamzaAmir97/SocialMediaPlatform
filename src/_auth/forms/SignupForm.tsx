@@ -9,7 +9,7 @@ import { Button } from "@/components/ui/button";
 import Loader from "@/components/ui/shared/Loader";
 import { useToast } from "@/hooks/use-toast"
 
-import { useCreateUserAccount, useSignInAccount } from "@/lib/react-query/queries";
+import { useCreateUserAccount, useSignInAccount } from "@/lib/react-query/queriesAndMutations";
 import { SignupValidation } from "@/lib/validation";
 import { useUserContext } from "@/context/AuthContext";
 
