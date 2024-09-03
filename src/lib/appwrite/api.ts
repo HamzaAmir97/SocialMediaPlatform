@@ -80,25 +80,3 @@ export async function getAccount() {
   }
 }
 
-
-// ============================== GET USER
-export async function getCurrentUser() {
-  try {
-    const currentAccount = await getAccount();
-
-    if (!currentAccount) throw Error;
-
-    const currentUser = await databases.listDocuments(
-      appwriteConfig.databaseId,
-      appwriteConfig.userCollectionId,
-      [Query.equal("accountId", currentAccount.$id)]
-    );
-
-    if (!currentUser) throw Error;
-
-    return currentUser.documents[0];
-  } catch (error) {
-    console.log(error);
-    return null;
-  }
-}
