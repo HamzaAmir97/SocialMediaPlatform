@@ -3,6 +3,7 @@ import { Account } from 'appwrite';
 
 import { appwriteConfig, account, databases, storage, avatars } from "./config";
 import { IUpdatePost, INewPost, INewUser, IUpdateUser } from "@/types";
+import { url } from "inspector";
 
 // ============================================================
 // AUTH
@@ -27,7 +28,8 @@ export async function createUserAccount(user: INewUser) {
       name: newAccount.name,
       email: newAccount.email,
       username: user.username,
-      imageUrl:new URL(avatarUrl),
+      imageUrl: new URL(avatarUrl),
+    
     });
 
     return newUser;
@@ -80,3 +82,28 @@ export async function getAccount() {
   }
 }
 
+
+
+export  async function getCurrentUser() {
+     try {
+      const currentAccount = await getAccount();
+  
+      if (!currentAccount) throw Error;
+
+      const currentUser = await databases.listDocuments(
+      appwriteConfig.databaseId,
+      appwriteConfig.userCollectionId,
+      [Query.equal('accountId', currentAccount.$id)]
+      )
+ if (!currentUser) throw Error;
+
+ return currentUser.documents[0];
+
+    } catch (error) {
+      console.log(error);
+      return null;
+    }
+  }
+
+
+  
