@@ -1,5 +1,5 @@
 import { INewUser } from "@/types"
-import { createUserAccount, signInAccount } from "@/lib/appwrite/api"
+import { createUserAccount, signInAccount, signOutAccount } from "@/lib/appwrite/api"
 import{
 useQuery,
 useMutation,
@@ -33,10 +33,10 @@ useInfiniteQuery,
 
  export const useSignOutAccount = () =>{
 
-
+ 
    return useMutation({
 
-      mutationFn: () => signOutAccount()
+      mutationFn:signOutAccount
 
 })
 }
