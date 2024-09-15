@@ -11,7 +11,9 @@ const Topbar = () => {
   const { mutate: signOut, isSuccess } = useSignOutAccount();
 
   useEffect(() => {
-    if (isSuccess) navigate(0);
+    if (isSuccess) 
+      
+      navigate(0);
   }, [isSuccess]);
 
   return (
