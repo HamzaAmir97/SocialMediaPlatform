@@ -11,6 +11,12 @@ import { url } from "inspector";
 
 // ============================== SIGN UP
 export async function createUserAccount(user: INewUser) {
+  
+  const isValidUsername = /^[a-zA-Z0-9][a-zA-Z0-9._-]{0,35}$/.test(user.username || '');
+
+  if (!isValidUsername) throw new Error('Invalid username format.');
+
+
   try {
     const newAccount = await account.create(
       ID.unique(),
