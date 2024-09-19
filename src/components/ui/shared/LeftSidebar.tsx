@@ -1,11 +1,12 @@
 import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
 
 import { INavLink } from "@/types";
-import { sidebarLinks } from "@/constants";
-import { Loader } from "@/components/ui/shared";
+
 import { Button } from "@/components/ui/button";
 import { useSignOutAccount } from "@/lib/react-query/queriesAndMutations";
 import { useUserContext, INITIAL_USER } from "@/context/AuthContext";
+import Loader from "./Loader";
+import { sidebarLinks } from "@/constants";
 
 const LeftSidebar = () => {
   const navigate = useNavigate();
@@ -47,6 +48,7 @@ const LeftSidebar = () => {
               alt="profile"
               className="h-14 w-14 rounded-full"
             />
+
             <div className="flex flex-col">
               <p className="body-bold">{user.name}</p>
               <p className="small-regular text-light-3">@{user.username}</p>
