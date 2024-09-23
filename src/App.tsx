@@ -3,10 +3,11 @@ import './App.css'
 import { Routes,Route } from "react-router-dom";
 import SigninForm from './_auth/forms/SigninForm';
 import SignupForm from './_auth/forms/SignupForm';
-import { Home } from './root/pages';
+import { AllUsers, CreatePost, EditPost, Home, PostDetails, Profile, Saved, UpdateProfile } from './root/pages';
 import AuthLayout from './_auth/AuthLayout';
 import RootLayout from './root/RootLayout';
 import { Toaster } from "@/components/ui/toaster"
+import Explore from './root/pages/Explore';
 
 function App() {
 
