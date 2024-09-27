@@ -1,8 +1,15 @@
-import React from 'react'
+import PostForm from "@/components/forms/PostForm"
 
 function CreatePost() {
   return (
-    <div>CreatePost</div>
+    <div>CreatePost
+
+   <PostForm />
+    
+
+    </div>
+     
+
   )
 }
 
