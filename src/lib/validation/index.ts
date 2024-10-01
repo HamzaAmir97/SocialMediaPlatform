@@ -1,4 +1,4 @@
-import { Captions } from "lucide-react"
+
 import { z } from "zod"
 
 
@@ -22,7 +22,7 @@ export const SignupValidation = z.object({
   export const PostValidation = z.object({
    captions: z.string().min(5).max(2200),
    file:z.custom<File[]>(),
-   locaion: z.string().min(2).max(100),
+   location: z.string().min(2).max(100),
    tags: z.string(),
 
 
