@@ -20,6 +20,8 @@ import { FileUploader, Loader } from "@/components/ui/shared";
 import { useCreatePost, useUpdatePost } from "@/lib/react-query/queriesAndMutations";
 import { useToast } from "@/hooks/use-toast";
 import { Textarea } from "../ui/textarea";
+import { Button } from "../ui/button";
+import { Input } from "../ui/input";
 
 
 type PostFormProps = {
@@ -87,7 +89,7 @@ const PostForm = ({ post, action }: PostFormProps) => {
         className="flex flex-col gap-9 w-full  max-w-5xl">
         <FormField
           control={form.control}
-          name="caption"
+          name = "caption"
           render={({ field }) => (
             <FormItem>
               <FormLabel className="shad-form_label">Caption</FormLabel>
