@@ -1,4 +1,4 @@
-import { ID, Query } from "appwrite";
+import { ID, Query, ImageGravity } from "appwrite";
 
 
 import { appwriteConfig, account, databases, storage, avatars } from "./config";
@@ -198,8 +198,8 @@ export function getFilePreview(fileId: string) {
       fileId,
       2000,
       2000,
-      "top",
-      100
+      ImageGravity.Top,
+      100,
     );
 
     if (!fileUrl) throw Error;
