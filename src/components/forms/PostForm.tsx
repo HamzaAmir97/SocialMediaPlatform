@@ -35,7 +35,7 @@ const PostForm = ({ post, action }: PostFormProps) => {
   const form = useForm<z.infer<typeof PostValidation>>({
     resolver: zodResolver(PostValidation),
     defaultValues: {
-      captions: post ? post?.caption : "",
+      caption: post ? post?.caption : "",
       file: [],
       location: post ? post.location : "",
       tags: post ? post.tags.join(",") : "",
@@ -48,38 +48,38 @@ const PostForm = ({ post, action }: PostFormProps) => {
   const { mutateAsync: updatePost, isPending: isLoadingUpdate } =
     useUpdatePost();
 
-  // Handler
-//   const handleSubmit = async (value: z.infer<typeof PostValidation>) => {
-//     // ACTION = UPDATE
-//     if (post && action === "Update") {
-//       const updatedPost = await updatePost({
-//         ...value,
-//         postId: post.$id,
-//         imageId: post.imageId,
-//         imageUrl: post.imageUrl,
-//       });
+//   Handler
+  const handleSubmit = async (value: z.infer<typeof PostValidation>) => {
+    // ACTION = UPDATE
+    if (post && action === "Update") {
+      const updatedPost = await updatePost({
+        ...value,
+        postId: post.$id,
+        imageId: post.imageId,
+        imageUrl: post.imageUrl,
+      });
 
-//       if (!updatedPost) {
-//         toast({
-//           title: `${action} post failed. Please try again.`,
-//         });
-//       }
-//       return navigate(`/posts/${post.$id}`);
-//     }
+      if (!updatedPost) {
+        toast({
+          title: `${action} post failed. Please try again.`,
+        });
+      }
+      return navigate(`/posts/${post.$id}`);
+    }
 
-//     // ACTION = CREATE
-//     const newPost = await createPost({
-//       ...value,
-//       userId: user.id,
-//     });
+    // ACTION = CREATE
+    const newPost = await createPost({
+      ...value,
+      userId: user.id,
+    });
 
-//     if (!newPost) {
-//       toast({
-//         title: `${action} post failed. Please try again.`,
-//       });
-//     }
-//     navigate("/");
-//   };
+    if (!newPost) {
+      toast({
+        title: `${action} post failed. Please try again.`,
+      });
+    }
+    navigate("/");
+  };
 
   return (
     <Form {...form}>
@@ -88,7 +88,7 @@ const PostForm = ({ post, action }: PostFormProps) => {
         className="flex flex-col gap-9 w-full  max-w-5xl">
         <FormField
           control={form.control}
-          name="captions"
+          name="caption"
           render={({ field }) => (
             <FormItem>
               <FormLabel className="shad-form_label">Caption</FormLabel>
