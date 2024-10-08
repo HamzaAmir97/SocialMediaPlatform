@@ -3,13 +3,8 @@ import PostForm from "@/components/forms/PostForm"
 function CreatePost() {
   return (
     <div>CreatePost
-
-   <PostForm />
-    
-
+      <PostForm action="Create" />
     </div>
-     
-
   )
 }
 
