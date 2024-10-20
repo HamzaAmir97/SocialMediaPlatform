@@ -2,7 +2,6 @@ import { useParams, Link, useNavigate } from "react-router-dom";
 
 import { Button } from "@/components/ui/button";
 import  Loader  from  "@/components/ui/shared/Loader";
-import { GridPostList, PostStats } from "@/components/shared";
 
 import {
   useGetPostById,
@@ -11,6 +10,7 @@ import {
 } from "@/lib/react-query/queriesAndMutations";
 import { multiFormatDateString } from "@/lib/utils";
 import { useUserContext } from "@/context/AuthContext";
+import PostStats from "@/components/ui/shared/PostStats";
 
 const PostDetails = () => {
   const navigate = useNavigate();
