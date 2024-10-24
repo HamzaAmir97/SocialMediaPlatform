@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import useDebounce from "@/hooks/useDebounce";
 import Loader from "@/components/ui/shared/Loader";
 import GridPostList from "@/components/ui/shared/GridPostList";
+import { Input } from "@/components/ui/input";
 
 export type SearchResultProps = {
   isSearchFetching: boolean;
