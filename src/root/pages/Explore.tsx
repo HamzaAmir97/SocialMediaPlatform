@@ -4,13 +4,13 @@ import useDebounce from "@/hooks/useDebounce";
 import Loader from "@/components/ui/shared/Loader";
 import GridPostList from "@/components/ui/shared/GridPostList";
 import { Input } from "@/components/ui/input";
-import SearchResults from "@/components/ui/shared/SearchResults";
 
 import { useInView } from "react-intersection-observer";
+import { useGetUserPosts, useSearchPosts } from "@/lib/react-query/queriesAndMutations";
 
 const Explore = () => {
   const { ref, inView } = useInView();
-  const { data: posts, fetchNextPage, hasNextPage } = useGetPosts();
+  const { data: posts, fetchNextPage, hasNextPage } = useGetUserPosts();
 
   const [searchValue, setSearchValue] = useState("");
   const debouncedSearch = useDebounce(searchValue, 500);
