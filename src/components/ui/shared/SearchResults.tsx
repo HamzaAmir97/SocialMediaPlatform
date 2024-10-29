@@ -17,3 +17,5 @@ export type SearchResultProps = {
       );
     }
   };
+
+export default SearchResults;

@@ -1,16 +1,17 @@
 import { useEffect, useState } from "react";
+import { Models } from "appwrite";
+import { useInView } from "react-intersection-observer";
 
 import useDebounce from "@/hooks/useDebounce";
 import Loader from "@/components/ui/shared/Loader";
 import GridPostList from "@/components/ui/shared/GridPostList";
+import SearchResults from "@/components/ui/shared/SearchResults";
 import { Input } from "@/components/ui/input";
 
-import { useInView } from "react-intersection-observer";
-import { useGetUserPosts, useSearchPosts } from "@/lib/react-query/queriesAndMutations";
 
 const Explore = () => {
   const { ref, inView } = useInView();
-  const { data: posts, fetchNextPage, hasNextPage } = useGetUserPosts();
+  const { data: posts, fetchNextPage, hasNextPage } = useGetPosts();
 
   const [searchValue, setSearchValue] = useState("");
   const debouncedSearch = useDebounce(searchValue, 500);
@@ -31,7 +32,7 @@ const Explore = () => {
 
   const shouldShowSearchResults = searchValue !== "";
   const shouldShowPosts = !shouldShowSearchResults && 
-    posts.pages.every((item) => item.documents.length === 0);
+    posts.pages.every((item: { documents: Models.Document[] }) => item.documents.length === 0);
 
   return (
     <div className="explore-container">
