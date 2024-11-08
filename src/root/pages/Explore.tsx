@@ -8,7 +8,7 @@ import GridPostList from "@/components/ui/shared/GridPostList";
 import SearchResults from "@/components/ui/shared/SearchResults";
 import { Input } from "@/components/ui/input";
 import { useSearchPosts } from "@/lib/react-query/queriesAndMutations";
-
+  
 
 const Explore = () => {
   const { ref, inView } = useInView();
