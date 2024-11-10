@@ -1,7 +1,8 @@
 import { Models } from "appwrite";
 import { Link } from "react-router-dom";
+import { Button } from "../button";
 
-import { Button } from "../ui/button";
+
 
 type UserCardProps = {
   user: Models.Document;
