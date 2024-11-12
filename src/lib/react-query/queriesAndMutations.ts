@@ -91,7 +91,18 @@ import {
      enabled: !!postId,
    });
  };
- 
+ export const useGetPosts = () => {
+   return useInfiniteQuery({
+     queryKey: [QUERY_KEYS.GET_INFINITE_POSTS],
+     queryFn: getInfinitePosts,
+     initialPageParam: 0,
+     getNextPageParam: (lastPage) => {
+       if (!lastPage || lastPage.documents.length === 0) return null;
+       const lastId = lastPage.documents[lastPage.documents.length - 1].$id;
+       return parseInt(lastId);
+     },
+   });
+ };
  export const useGetUserPosts = (userId?: string) => {
    return useQuery({
      queryKey: [QUERY_KEYS.GET_USER_POSTS, userId],

@@ -7,7 +7,7 @@ import Loader from "@/components/ui/shared/Loader";
 import GridPostList from "@/components/ui/shared/GridPostList";
 import SearchResults from "@/components/ui/shared/SearchResults";
 import { Input } from "@/components/ui/input";
-import { useSearchPosts } from "@/lib/react-query/queriesAndMutations";
+import { useGetPosts, useSearchPosts } from "@/lib/react-query/queriesAndMutations";
   
 
 const Explore = () => {
@@ -33,7 +33,7 @@ const Explore = () => {
 
   const shouldShowSearchResults = searchValue !== "";
   const shouldShowPosts = !shouldShowSearchResults && 
-    posts.pages.every((item: { documents: Models.Document[] }) => item.documents.length === 0);
+    posts.pages.every((item: { documents: Models.Document[] } | undefined) => item?.documents.length === 0);
 
   return (
     <div className="explore-container">
@@ -82,8 +82,8 @@ const Explore = () => {
         ) : shouldShowPosts ? (
           <p className="text-light-4 mt-10 text-center w-full">End of posts</p>
         ) : (
-          posts.pages.map((item, index) => (
-            <GridPostList key={`page-${index}`} posts={item.documents} />
+          posts.pages.map((item: { documents: Models.Document[] } | undefined, index) => (
+            <GridPostList key={`page-${index}`} posts={item?.documents ?? []} />
           ))
         )}
       </div>
