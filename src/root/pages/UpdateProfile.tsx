@@ -15,6 +15,10 @@ import {
 import { ProfileValidation } from "@/lib/validation";
 import { useUserContext } from "@/context/AuthContext";
 import { useGetUserById, useUpdateUser } from "@/lib/react-query/queriesAndMutations";
+import Loader from "@/components/ui/shared/Loader";
+import { Button } from "@/components/ui/button";
+import { Textarea } from "@/components/ui/textarea";
+import { Input } from "@/components/ui/input";
 
 const UpdateProfile = () => {
   const { toast } = useToast();
