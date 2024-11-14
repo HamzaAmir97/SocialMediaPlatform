@@ -19,6 +19,8 @@ import Loader from "@/components/ui/shared/Loader";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Input } from "@/components/ui/input";
+import ProfileUploader from "@/components/ui/shared/ProfileUploader";
+import { useToast } from "@/hooks/use-toast";
 
 const UpdateProfile = () => {
   const { toast } = useToast();
@@ -38,7 +40,7 @@ const UpdateProfile = () => {
 
   // Queries
   const { data: currentUser } = useGetUserById(id || "");
-  const { mutateAsync: updateUser, isLoading: isLoadingUpdate } =
+  const { mutateAsync: updateUser, isPending: isLoadingUpdate } =
     useUpdateUser();
 
   if (!currentUser)
