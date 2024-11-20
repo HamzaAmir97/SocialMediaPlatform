@@ -242,39 +242,11 @@ export async function searchPosts(searchTerm: string) {
   }
 }
 
-export async function getInfinitePosts({ pageParam }: { pageParam: number }) {
-  const queries: any[] = [Query.orderDesc("$updatedAt"), Query.limit(9)];
-
-  if (pageParam) {
-    queries.push(Query.cursorAfter(pageParam.toString()));
-  }
-
-  try {
-    const posts = await databases.listDocuments(
-      appwriteConfig.databaseId,
-      appwriteConfig.postCollectionId,
-      queries
-    );
-
-    if (!posts) throw Error("Failed to fetch posts");
-
-    return posts;
-  } catch (error) {
-    console.log(error);
-    throw error;
-  }
-}
-
-
-// // api.ts
-
-// // ✨ تعديل: غيرنا pageParam من number إلى string
-// export async function getInfinitePosts({ pageParam }: { pageParam: string }) {
-//   // أصبح لدينا نص، لذا لا داعي لـ .toString()
+// export async function getInfinitePosts({ pageParam }: { pageParam: number }) {
 //   const queries: any[] = [Query.orderDesc("$updatedAt"), Query.limit(9)];
 
 //   if (pageParam) {
-//     queries.push(Query.cursorAfter(pageParam)); // ✨ تعديل: أزلنا .toString()
+//     queries.push(Query.cursorAfter(pageParam.toString()));
 //   }
 
 //   try {
@@ -292,7 +264,41 @@ export async function getInfinitePosts({ pageParam }: { pageParam: number }) {
 //     throw error;
 //   }
 // }
+
+
+// في ملف api.ts
+export async function getInfinitePosts({ pageParam }: { pageParam: string | undefined }) {
+  const queries: any[] = [Query.orderDesc("$updatedAt"), Query.limit(9)];
+
+  // pageParam هو الآن نص، لذا لا نحتاج .toString()
+  if (pageParam) {
+    queries.push(Query.cursorAfter(pageParam));
+  }
+  
+  // ... باقي الكود
+  try {
+    const posts = await databases.listDocuments(
+      appwriteConfig.databaseId,
+      appwriteConfig.postCollectionId,
+      queries
+    );
+
+    if (!posts) throw Error("Failed to fetch posts");
+
+    return posts;
+  } catch (error) {
+    console.log(error);
+    throw error;
+  }
+}
+
+
+
+
+
 // ============================== GET POST BY ID
+
+
 export async function getPostById(postId?: string) {
   if (!postId) throw Error;
 
