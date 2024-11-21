@@ -39,7 +39,7 @@ function App() {
     <Route path='/create-post' element={<CreatePost/>} />
     <Route path='/update-post/:postId' element={<EditPost/>} />
     <Route path='/posts/:postId' element={<PostDetails/>} />
-    <Route path='/profile/:id' element={<Profile/>} />
+    <Route path='/profile/:id/*' element={<Profile/>} />
     <Route path='/update-profile/:id' element={<UpdateProfile/>} />
     </Route>
 
