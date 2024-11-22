@@ -251,14 +251,15 @@ export async function getInfinitePosts({ pageParam }: { pageParam: number }) {
       queries
     );
 
-    if (!posts) throw Error;
+    if (!posts) throw Error("Failed to fetch posts");
 
     return posts;
   } catch (error) {
     console.log(error);
+    // ✅ الحل: أضف هذا السطر
+    throw error;
   }
 }
-
 // ============================== GET POST BY ID
 export async function getPostById(postId?: string) {
   if (!postId) throw Error;
@@ -448,11 +449,13 @@ export async function getRecentPosts() {
       [Query.orderDesc("$createdAt"), Query.limit(20)]
     );
 
-    if (!posts) throw Error;
+    if (!posts) throw Error("Failed to fetch posts");
 
     return posts;
   } catch (error) {
     console.log(error);
+    // ✅ الحل: أضف هذا السطر
+    throw error; 
   }
 }
 
