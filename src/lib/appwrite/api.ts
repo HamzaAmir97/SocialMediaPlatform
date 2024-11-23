@@ -136,13 +136,13 @@ export async function createPost(post: INewPost) {
     // Upload file to appwrite storage
     const uploadedFile = await uploadFile(post.file[0]);
 
-    if (!uploadedFile) throw Error;
+    if (!uploadedFile) throw Error("File upload failed");
 
     // Get file url
     const fileUrl = getFilePreview(uploadedFile.$id);
     if (!fileUrl) {
       await deleteFile(uploadedFile.$id);
-      throw Error;
+      throw Error("Failed to get file URL");
     }
 
     // Convert tags into array
@@ -165,15 +165,16 @@ export async function createPost(post: INewPost) {
 
     if (!newPost) {
       await deleteFile(uploadedFile.$id);
-      throw Error;
+      throw Error("Failed to create post");
     }
 
     return newPost;
   } catch (error) {
     console.log(error);
+    // 
+    throw error;
   }
 }
-
 // ============================== UPLOAD FILE
 export async function uploadFile(file: File) {
   try {
