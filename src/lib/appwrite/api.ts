@@ -190,8 +190,8 @@ export async function uploadFile(file: File) {
   }
 }
 
-// ============================== GET FILE URL
-export function getFilePreview(fileId: string) {
+// ============================== GET FILE URL (النسخة المعدلة)
+export function getFilePreview(fileId: string): string | undefined {
   try {
     const fileUrl = storage.getFilePreview(
       appwriteConfig.storageId,
@@ -199,16 +199,44 @@ export function getFilePreview(fileId: string) {
       2000,
       2000,
       ImageGravity.Top,
-      100,
+      100
     );
 
-    if (!fileUrl) throw Error;
+    if (!fileUrl) {
+      throw new Error("Could not get file URL");
+    }
 
-    return fileUrl;
+    // ✨ التعديل الأساسي هنا
+    // نستخرج الرابط النصي من الكائن ونقوم بإرجاعه
+    return fileUrl.href;
+
   } catch (error) {
     console.log(error);
+    // سيتم إرجاع 'undefined' في حالة وجود خطأ
   }
 }
+
+
+
+// // ============================== GET FILE URL
+// export function getFilePreview(fileId: string) {
+//   try {
+//     const fileUrl = storage.getFilePreview(
+//       appwriteConfig.storageId,
+//       fileId,
+//       2000,
+//       2000,
+//       ImageGravity.Top,
+//       100,
+//     );
+
+//     if (!fileUrl) throw Error;
+
+//     return fileUrl;
+//   } catch (error) {
+//     console.log(error);
+//   }
+// }
 
 // ============================== DELETE FILE
 export async function deleteFile(fileId: string) {
