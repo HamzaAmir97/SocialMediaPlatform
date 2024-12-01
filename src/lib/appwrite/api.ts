@@ -195,22 +195,38 @@ export async function uploadFile(file: File) {
 
 
 // ============================== GET FILE URL
-export function getFilePreview(fileId: string) {
+// export function getFilePreview(fileId: string) {
+//   try {
+//     const fileUrl = storage.getFilePreview(
+//       appwriteConfig.storageId,
+//       fileId,
+//       2000,
+//       2000,
+//       ImageGravity.Top,
+//       100,
+//     );
+
+//     if (!fileUrl) throw Error;
+
+//     return fileUrl;
+//   } catch (error) {
+//     console.log(error);
+//   }
+// }
+
+export function getFilePreview(fileId: string): string | undefined {
   try {
+    // ✨ التعديل: قمنا بإزالة أبعاد الصورة والجودة
+    // الآن الدالة تطلب الصورة الأصلية فقط
     const fileUrl = storage.getFilePreview(
       appwriteConfig.storageId,
-      fileId,
-      2000,
-      2000,
-      ImageGravity.Top,
-      100,
+      fileId
     );
-
-    if (!fileUrl) throw Error;
-
+    
     return fileUrl;
+
   } catch (error) {
-    console.log(error);
+    console.log("Error getting file preview:", error);
   }
 }
 
