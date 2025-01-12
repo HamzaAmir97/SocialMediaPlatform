@@ -48,7 +48,9 @@ const Profile = () => {
           <img
             src={
               currentUser.imageUrl || "/assets/icons/profile-placeholder.svg"
+            
             }
+            referrerPolicy="no-referrer"
             alt="profile"
             className="w-28 h-28 lg:h-36 lg:w-36 rounded-full"
           />
@@ -85,6 +87,7 @@ const Profile = () => {
                   alt="edit"
                   width={20}
                   height={20}
+                  referrerPolicy="no-referrer"
                 />
                 <p className="flex whitespace-nowrap small-medium">
                   Edit Profile
@@ -112,6 +115,7 @@ const Profile = () => {
               alt="posts"
               width={20}
               height={20}
+              referrerPolicy="no-referrer"
             />
             Posts
           </Link>
@@ -125,6 +129,7 @@ const Profile = () => {
               alt="like"
               width={20}
               height={20}
+              referrerPolicy="no-referrer"
             />
             Liked Posts
           </Link>

@@ -61,6 +61,7 @@ console.log("الرابط النهائي للاختبار:", finalUrl);
             width={24}
             height={24}
             alt="search"
+            referrerPolicy="no-referrer"
           />
           <Input
             type="text"
@@ -85,6 +86,7 @@ console.log("الرابط النهائي للاختبار:", finalUrl);
             width={20}
             height={20}
             alt="filter"
+            referrerPolicy="no-referrer"
           />
         </div>
       </div>

@@ -74,6 +74,7 @@ const PostCard = ({ post }: PostCardProps) => {
           src={post.imageUrl || "/assets/icons/profile-placeholder.svg"}
           alt="post image"
           className="post-card_img"
+          referrerPolicy="no-referrer"
         />
       </Link>
 

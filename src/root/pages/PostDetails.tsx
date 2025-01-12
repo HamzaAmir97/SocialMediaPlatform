@@ -45,6 +45,7 @@ const PostDetails = () => {
             alt="back"
             width={24}
             height={24}
+            referrerPolicy="no-referrer"
           />
           <p className="small-medium lg:base-medium">Back</p>
         </Button>
@@ -58,6 +59,7 @@ const PostDetails = () => {
             src={post?.imageUrl}
             alt="creator"
             className="post_details-img"
+            referrerPolicy="no-referrer"
           />
 
           <div className="post_details-info">
@@ -72,7 +74,8 @@ const PostDetails = () => {
                   }
                   alt="creator"
                   className="w-8 h-8 lg:w-12 lg:h-12 rounded-full"
-                />
+               referrerPolicy="no-referrer"
+               />
                 <div className="flex gap-1 flex-col">
                   <p className="base-medium lg:body-bold text-light-1">
                     {post?.creator.name}
@@ -98,6 +101,7 @@ const PostDetails = () => {
                     alt="edit"
                     width={24}
                     height={24}
+                    referrerPolicy="no-referrer"
                   />
                 </Link>
 
