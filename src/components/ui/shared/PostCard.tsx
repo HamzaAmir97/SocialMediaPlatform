@@ -27,6 +27,7 @@ const PostCard = ({ post }: PostCardProps) => {
               }
               alt="creator"
               className="w-12 lg:h-12 rounded-full"
+              referrerPolicy="no-referrer"
             />
           </Link>
 
@@ -54,6 +55,7 @@ const PostCard = ({ post }: PostCardProps) => {
             alt="edit"
             width={20}
             height={20}
+            referrerPolicy="no-referrer"
           />
         </Link>
       </div>
