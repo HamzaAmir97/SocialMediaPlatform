@@ -4,6 +4,7 @@ import { createContext, useContext, useEffect, useState } from "react";
 import { IUser } from "@/types";
 import { getCurrentUser } from "@/lib/appwrite/api";
 
+// المستخدم الافتراضي
 export const INITIAL_USER = {
   id: "",
   name: "",
@@ -13,6 +14,7 @@ export const INITIAL_USER = {
   bio: "",
 };
 
+// الحالة الابتدائية للسياق
 const INITIAL_STATE = {
   user: INITIAL_USER,
   isLoading: false,
@@ -39,6 +41,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
+  // دالة التحقق من حالة المستخدم
   const checkAuthUser = async () => {
     setIsLoading(true);
     try {
@@ -53,30 +56,28 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
           bio: currentAccount.bio,
         });
         setIsAuthenticated(true);
-
         return true;
       }
 
       return false;
     } catch (error) {
-      console.error(error);
+      console.error("Error checking auth user:", error);
       return false;
     } finally {
       setIsLoading(false);
     }
   };
 
+  // تحقق عند تحميل التطبيق من حالة تسجيل الدخول
   useEffect(() => {
-    const cookieFallback = localStorage.getItem("cookieFallback");
-    if (
-      cookieFallback === "[]" ||
-      // cookieFallback === null ||
-      cookieFallback === undefined
-    ) {
-      navigate("/sign-in");
-    }
+    const verifyUser = async () => {
+      const isLoggedIn = await checkAuthUser();
+      if (!isLoggedIn) {
+        navigate("/sign-in");
+      }
+    };
 
-    checkAuthUser();
+    verifyUser();
   }, []);
 
   const value = {
