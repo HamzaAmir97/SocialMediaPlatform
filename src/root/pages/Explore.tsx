@@ -9,22 +9,10 @@ import SearchResults from "@/components/ui/shared/SearchResults";
 import { Input } from "@/components/ui/input";
 import { useGetPosts, useSearchPosts } from "@/lib/react-query/queriesAndMutations";
   
-import { storage } from "@/lib/appwrite/config"; // تأكد من المسار الصحيح
 
 const Explore = () => {
 
 
-// استبدله بالـ ID الخاص بالـ Bucket لديك
-const BUCKET_ID = "683f4ba4001bc5efefcd";
-
-// الصق الـ ID الذي نسخته من قاعدة البيانات هنا
-const FILE_ID = "684ef7f40033930e2d9d";
-
-// قم بتوليد الرابط
-const finalUrl = storage.getFilePreview(BUCKET_ID, FILE_ID);
-
-// اطبع الرابط في الـ console
-console.log("الرابط النهائي للاختبار:", finalUrl);
 
 
   const { ref, inView } = useInView();
