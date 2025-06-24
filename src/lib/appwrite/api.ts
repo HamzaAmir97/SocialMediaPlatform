@@ -181,7 +181,8 @@ export async function uploadFile(file: File) {
     const uploadedFile = await storage.createFile(
       appwriteConfig.storageId,
       ID.unique(),
-      file
+      file,
+      // ✅ صلاحية القراءة العامة
     );
 
     return uploadedFile;
@@ -218,7 +219,7 @@ export function getFilePreview(fileId: string): string | undefined {
   try {
     // ✨ التعديل: قمنا بإزالة أبعاد الصورة والجودة
     // الآن الدالة تطلب الصورة الأصلية فقط
-    const fileUrl = storage.getFilePreview(
+    const fileUrl = storage.getFileView(
       appwriteConfig.storageId,
       fileId
     );
