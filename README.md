@@ -1,13 +1,18 @@
 # 📸 Ecogram – Instagram Clone
-
 <div align="center">
-  <img src="/screenshots/ecogram (1).png" alt="Ecogram Home Feed"  />
-    <img src="/screenshots/ecogram (2).png" alt="Ecogram Home Feed"  />
-      <img src="/screenshots/ecogram (3.png" alt="Ecogram Home Feed"  />
-  <img src="/screenshots/ecogram (4).png" alt="Ecogram Home Feed"  />
-  <img src="/screenshots/ecogram (5).png" alt="Ecogram Home Feed"  />
-  <img src="/screenshots/ecogram( 6).png" alt="Ecogram Home Feed"  />
 
+<table>
+  <tr>
+    <td><img src="/screenshots/ecogram (1).png" alt="Screen 1" width="200"/></td>
+    <td><img src="/screenshots/ecogram (2).png" alt="Screen 2" width="200"/></td>
+    <td><img src="/screenshots/ecogram (3).png" alt="Screen 3" width="200"/></td>
+  </tr>
+  <tr>
+    <td><img src="/screenshots/ecogram (4).png" alt="Screen 4" width="200"/></td>
+    <td><img src="/screenshots/ecogram (5).png" alt="Screen 5" width="200"/></td>
+    <td><img src="/screenshots/ecogram (6).png" alt="Screen 6" width="200"/></td>
+  </tr>
+</table>
 
   
 </div>
