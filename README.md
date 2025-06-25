@@ -1,54 +1,141 @@
-# React + TypeScript + Vite
+# 📸 Ecogram – Instagram Clone
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Ecogram is a modern full-stack Instagram-style social media platform built with React, Appwrite, and Tailwind CSS. It enables users to create, like, and explore posts in a sleek, responsive UI while leveraging powerful features like authentication, real-time updates, and content bookmarking.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🗂 Table of Contents
 
-## Expanding the ESLint configuration
+1. [📖 Overview](#-overview)
+2. [✨ Features](#-features)
+3. [⚙️ Tech Stack](#-tech-stack)
+4. [📁 Project Structure](#-project-structure)
+5. [🚀 Getting Started](#-getting-started)
+6. [📦 Deployment](#-deployment)
+7. [📄 License](#-license)
+8. [🔮 Future Improvements](#-future-improvements)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## 📖 Overview
+
+**Ecogram** allows users to:
+
+- Sign in securely with Appwrite Auth
+- Post images with captions
+- Like, bookmark, and explore posts
+- Edit or delete personal posts
+- View other user profiles
+- Enjoy a mobile-friendly, modern UI
+
+---
+
+## ✨ Features
+
+- 🔐 **Secure Auth** – Appwrite handles sign-in, sign-up, and sessions
+- 📝 **Create/Edit Posts** – Upload images with captions
+- 🏠 **Home Feed** – Displays posts from all users
+- 🔍 **Explore Page** – Discover trending posts
+- ❤️ **Like & Bookmark** – Interact and save posts
+- 👤 **User Profiles** – View user-specific posts
+- 📷 **Media Uploads** – Image storage with Appwrite
+- 📱 **Responsive UI** – Works beautifully on all screen sizes
+
+---
+
+## ⚙️ Tech Stack
+
+| Area                | Tech Used                                                                 |
+|---------------------|---------------------------------------------------------------------------|
+| ⚛️ Frontend         | ![React](https://img.shields.io/badge/React-20232A?logo=react&logoColor=61DAFB) |
+| ⏱ Build Tool        | ![Vite](https://img.shields.io/badge/Vite-646CFF?logo=vite&logoColor=white) |
+| 🎨 Styling          | ![Tailwind CSS](https://img.shields.io/badge/TailwindCSS-06B6D4?logo=tailwind-css) |
+| 🔐 Auth & Backend   | ![Appwrite](https://img.shields.io/badge/Appwrite-F02E65?logo=appwrite&logoColor=white) |
+| 📦 Forms & Validation| React Hook Form + Zod                                                    |
+| 🔄 State Management | ![@tanstack/react-query](https://img.shields.io/badge/ReactQuery-FF4154?logo=react-query&logoColor=white) |
+| 🧩 UI Components    | Radix UI + Lucide Icons                                                   |
+
+---
+
+## 📁 Project Structure
+
+```bash
+Ecogram/
+├── public/                  # Static assets
+├── src/
+│   ├── _auth/               # Auth pages and logic
+│   ├── components/
+│   │   ├── forms/           # Forms like PostForm
+│   │   └── ui/shared/       # Header, Sidebar, Loader, etc.
+│   ├── constants/           # App-wide constants
+│   ├── context/             # React contexts
+│   ├── hooks/               # Custom hooks
+│   ├── lib/
+│   │   ├── appwrite/        # Appwrite integration
+│   │   └── react-query/     # React Query setup
+│   ├── root/pages/          # Page-level components
+│   └── types/               # TypeScript types
+├── index.html
+├── package.json
+├── tailwind.config.js
+└── README.md
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 🚀 Getting Started
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+### Prerequisites
+
+- Node.js `v18+`
+- `pnpm`, `npm`, or `yarn`
+
+### Installation
+
+```bash
+git clone https://github.com/your-username/ecogram.git
+cd ecogram
+pnpm install
+pnpm dev
 ```
+
+Then open your browser at: [http://localhost:5173](http://localhost:5173)
+
+---
+
+## 📦 Deployment
+
+1. **Build for production:**
+```bash
+pnpm build
+```
+
+2. **Preview locally:**
+```bash
+pnpm preview
+```
+
+3. **Deploy on platforms like:**
+- Vercel
+- Netlify
+- Docker or custom server
+
+---
+
+## 📄 License
+
+This project is open-source. Please review or add a LICENSE file if needed.
+
+---
+
+## 🔮 Future Improvements
+
+- Real-time chat
+- Push notifications
+- Dark mode & theme switch
+- Advanced analytics & engagement stats
+- Progressive Web App (PWA) support
+
+---
+
+> Built with 💖 using cutting-edge web tech to bring a pixel-perfect social experience to life. Share, explore, connect!

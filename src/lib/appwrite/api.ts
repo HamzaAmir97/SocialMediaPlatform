@@ -1,4 +1,4 @@
-import { ID, Query, ImageGravity } from "appwrite";
+import { ID, Query,  } from "appwrite";
 
 
 import { appwriteConfig, account, databases, storage, avatars } from "./config";
