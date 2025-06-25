@@ -1,4 +1,5 @@
 # 📸 Ecogram – Instagram Clone
+
 <div align="center">
 
 <table>
@@ -14,7 +15,6 @@
   </tr>
 </table>
 
-  
 </div>
 
 Ecogram is a modern full-stack Instagram-style social media platform built with React, Appwrite, and Tailwind CSS. It enables users to create, like, and explore posts in a sleek, responsive UI while leveraging powerful features like authentication, real-time updates, and content bookmarking.
@@ -23,13 +23,13 @@ Ecogram is a modern full-stack Instagram-style social media platform built with 
 
 ## 🗂 Table of Contents
 
-1. [📖 Overview](#-overview)  
-2. [✨ Features](#-features)  
-3. [⚙️ Tech Stack](#-tech-stack)  
-4. [📁 Project Structure](#-project-structure)  
-5. [🚀 Getting Started](#-getting-started)  
-6. [📦 Deployment](#-deployment)  
-7. [📄 License](#-license)  
+1. [📖 Overview](#-overview)
+2. [✨ Features](#-features)
+3. [⚙️ Tech Stack](#-tech-stack)
+4. [📁 Project Structure](#-project-structure)
+5. [🚀 Getting Started](#-getting-started)
+6. [📦 Deployment](#-deployment)
+7. [📄 License](#-license)
 8. [🔮 Future Improvements](#-future-improvements)
 
 ---
@@ -38,39 +38,39 @@ Ecogram is a modern full-stack Instagram-style social media platform built with 
 
 **Ecogram** allows users to:
 
-- Sign in securely with Appwrite Auth  
-- Post images with captions  
-- Like, bookmark, and explore posts  
-- Edit or delete personal posts  
-- View other user profiles  
-- Enjoy a mobile-friendly, modern UI
+* Sign in securely with Appwrite Auth
+* Post images with captions
+* Like, bookmark, and explore posts
+* Edit or delete personal posts
+* View other user profiles
+* Enjoy a mobile-friendly, modern UI
 
 ---
 
 ## ✨ Features
 
-- 🔐 **Secure Auth** – Appwrite handles sign-in, sign-up, and sessions  
-- 📝 **Create/Edit Posts** – Upload images with captions  
-- 🏠 **Home Feed** – Displays posts from all users  
-- 🔍 **Explore Page** – Discover trending posts  
-- ❤️ **Like & Bookmark** – Interact and save posts  
-- 👤 **User Profiles** – View user-specific posts  
-- 📷 **Media Uploads** – Image storage with Appwrite  
-- 📱 **Responsive UI** – Works beautifully on all screen sizes
+* 🔐 **Secure Auth** – Appwrite handles sign-in, sign-up, and sessions
+* 📝 **Create/Edit Posts** – Upload images with captions
+* 🏠 **Home Feed** – Displays posts from all users
+* 🔍 **Explore Page** – Discover trending posts
+* ❤️ **Like & Bookmark** – Interact and save posts
+* 👤 **User Profiles** – View user-specific posts
+* 📷 **Media Uploads** – Image storage with Appwrite
+* 📱 **Responsive UI** – Works beautifully on all screen sizes
 
 ---
 
 ## ⚙️ Tech Stack
 
-| Area                | Tech Used                                                                 |
-|---------------------|---------------------------------------------------------------------------|
-| ⚛️ Frontend         | ![React](https://img.shields.io/badge/React-20232A?logo=react&logoColor=61DAFB) |
-| ⏱ Build Tool        | ![Vite](https://img.shields.io/badge/Vite-646CFF?logo=vite&logoColor=white) |
-| 🎨 Styling          | ![Tailwind CSS](https://img.shields.io/badge/TailwindCSS-06B6D4?logo=tailwind-css) |
-| 🔐 Auth & Backend   | ![Appwrite](https://img.shields.io/badge/Appwrite-F02E65?logo=appwrite&logoColor=white) |
-| 📦 Forms & Validation| React Hook Form + Zod                                                    |
-| 🔄 State Management | ![@tanstack/react-query](https://img.shields.io/badge/ReactQuery-FF4154?logo=react-query&logoColor=white) |
-| 🧩 UI Components    | Radix UI + Lucide Icons                                                   |
+| Area                  | Tech Used                                                                                                  |
+| --------------------- | ---------------------------------------------------------------------------------------------------------- |
+| ⚛️ Frontend           | ![React](https://img.shields.io/badge/React-20232A?logo=react\&logoColor=61DAFB)                           |
+| ⏱ Build Tool          | ![Vite](https://img.shields.io/badge/Vite-646CFF?logo=vite\&logoColor=white)                               |
+| 🎨 Styling            | ![Tailwind CSS](https://img.shields.io/badge/TailwindCSS-06B6D4?logo=tailwind-css)                         |
+| 🔐 Auth & Backend     | ![Appwrite](https://img.shields.io/badge/Appwrite-F02E65?logo=appwrite\&logoColor=white)                   |
+| 📦 Forms & Validation | React Hook Form + Zod                                                                                      |
+| 🔄 State Management   | ![@tanstack/react-query](https://img.shields.io/badge/ReactQuery-FF4154?logo=react-query\&logoColor=white) |
+| 🧩 UI Components      | Radix UI + Lucide Icons                                                                                    |
 
 ---
 
@@ -97,6 +97,7 @@ Ecogram/
 ├── package.json
 ├── tailwind.config.js
 └── README.md
+```
 
 ---
 
@@ -104,17 +105,17 @@ Ecogram/
 
 ### Prerequisites
 
-- Node.js v18+
-- pnpm, npm, or yarn
+* Node.js v18+
+* pnpm, npm, or yarn
 
 ### Installation
 
-bash
+```bash
 git clone https://github.com/your-username/ecogram.git
 cd ecogram
 pnpm install
 pnpm dev
-
+```
 
 Then open your browser at: [http://localhost:5173](http://localhost:5173)
 
@@ -123,19 +124,22 @@ Then open your browser at: [http://localhost:5173](http://localhost:5173)
 ## 📦 Deployment
 
 1. **Build for production:**
-bash
-pnpm build
 
+```bash
+pnpm build
+```
 
 2. **Preview locally:**
-bash
-pnpm preview
 
+```bash
+pnpm preview
+```
 
 3. **Deploy on platforms like:**
-- Vercel
-- Netlify
-- Docker or custom server
+
+* Vercel
+* Netlify
+* Docker or custom server
 
 ---
 
@@ -147,11 +151,11 @@ This project is open-source. Please review or add a LICENSE file if needed.
 
 ## 🔮 Future Improvements
 
-- Real-time chat
-- Push notifications
-- Dark mode & theme switch
-- Advanced analytics & engagement stats
-- Progressive Web App (PWA) support
+* Real-time chat
+* Push notifications
+* Dark mode & theme switch
+* Advanced analytics & engagement stats
+* Progressive Web App (PWA) support
 
 ---
 
